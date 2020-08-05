@@ -5,8 +5,14 @@
 # the provided matrix.
 
 makeCacheMatrix <- function(x = matrix()) {
+  if (ncol(x) != nrow(x)){
+    stop("The provided matrix is not inversible. please provide a square matrix.")
+  }
   m <- NULL
   set <- function(y) {
+    if (ncol(y) != nrow(y)){
+      stop("The provided matrix is not inversible. please provide a square matrix.")
+    }
     x <<- y
     m <<- NULL
   }
